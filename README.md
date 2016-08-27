@@ -1,17 +1,19 @@
 # secret
 
-Make Secret Functions in Package
+Make Secret Functions in package
 
-To make a secret function in package with source code hidden, write the function in the following manner:
+To hide the source code of R functions in package, take the following steps:
 
-```r
-#' test
-#' @name test
-#' @export
-#' @importFrom secret secret
-NULL
+1. Call `devtools::use_rcpp()` to initiate using Rcpp in package.
+1. Call `secret::use_secret()` to initiate using secret in package.
+1. Write anonymous functions in `./secret`.
 
-delayedAssign("test", secret(function(x) x + 1), environment(), environment())
-```
+    For example, create `./secret/test.R`:
 
-Build and distribute the binary package. Then the source code `function(x) x + 1` will not be exposed to the user.
+    ```r
+    function(x) {
+      x + 100
+    }
+    ```
+1. Call `secret::build_secret()` which converts all R scripts in `./secret` to corresponding C++ source files in `./src`. In the example, `./secret/test.R` is converted to `./secret/test.cpp`.
+1. Build and distribute the package in binary format.

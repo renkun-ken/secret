@@ -1,0 +1,13 @@
+Package: secret
+Title: Make Secret Functions in Package
+Version: 0.0.0.9000
+Authors@R: person("Kun", "Ren", email = "mail@renkun.me", role = c("aut", "cre"))
+Description: Hide the source code of functions in package via Rcpp.
+Depends:
+    R (>= 3.3.1)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 5.0.1
+ByteCompile: TRUE
+Suggests: Rcpp
