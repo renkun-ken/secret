@@ -15,5 +15,5 @@ To hide the source code of R functions in package, take the following steps:
       x + 100
     }
     ```
-1. Call `secret::build_secret()` which converts all R scripts in `./secret` to corresponding C++ source files in `./src`. In the example, `./secret/test.R` is converted to `./secret/test.cpp`.
+1. Call `secret::build_secret()` which converts all R scripts in `./secret` to corresponding C++ source files in `./src`. In the example, `./secret/test.R` is converted to `./src/test.cpp`.
 1. Build and distribute the package in binary format.

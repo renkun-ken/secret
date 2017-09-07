@@ -12,4 +12,3 @@ build_secret(pkg = ".")
 \description{
 Build secret functions
 }
-

@@ -12,4 +12,3 @@ use_secret(pkg = ".")
 \description{
 Use secret functions
 }
-
